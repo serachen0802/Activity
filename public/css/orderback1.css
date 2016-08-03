@@ -1,0 +1,78 @@
+
+.table tr:nth-child(even) {
+    background-color: #FFFBF7;
+}
+
+.table tr th,
+.table tr td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 15px;
+}
+
+/*按鈕*/
+.table button {
+    background-color: #A66E54;
+    color: #FFFFFF;
+    font-weight: bold;
+    
+}
+
+.table button:hover {
+    background-color: #834E34;
+    color: #FFFFFF;
+}
+
+.back .btn {
+    padding-bottom: 0,15px;
+    float: right;
+    background-color: #A66E54;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.ba{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+.FormOne {
+    clear: both;
+    height: 50px;
+}
+
+.FormLeft {
+    float: left;
+    width: 10%;
+    /*padding-top: 6px;*/
+    font-size: 20px;
+}
+.FormRight {
+    float: left;
+    width: 80%;
+}
+.bas{
+     font-size: 20px;
+     padding-bottom: 20px;
+}
+.FormBtn input[type=button]{
+    padding: 7px 15px;
+    border: none;
+    /*font-weight: 600;*/
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    
+    /*background-color: #009FCC;*/
+    margin-right:450px;
+    margin-bottom: 20px;
+    background-color: #A66E54;
+    color: #FFFFFF;
+    font-weight: bold;
+    
+    
+     
+}
+
+
+.FormBtn {
+    float: right;
+}

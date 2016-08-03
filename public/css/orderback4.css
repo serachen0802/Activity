@@ -1,0 +1,60 @@
+
+.OrderContent {
+    padding: 0 5%;
+}
+
+.agreeTitle {
+    font-size: 24px;
+    font-weight: 900;
+    /*font-family: 標楷體;*/
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000;
+}
+
+.agreeContent {
+    /*font-family: 標楷體;*/
+    font-size: 20px;
+    padding: 2% 13%;
+}
+
+.agreeCheck {
+    padding: 2% 5%;
+}
+
+.FormBlock {
+    padding: 2% 5%;
+}
+
+.FormOne {
+    float: left;
+}
+
+.FormOne label {
+    padding-right: 10px;
+}
+
+.FormOne input {
+    margin-right: 20px;
+}
+
+.SubmitBtn {
+    float: right;
+    margin-top: 15px;
+} 
+
+.marginB {
+    margin-bottom: 6px;
+}
+
+.test {
+    float: right;
+}
+.marginC {
+    margin: 15px;
+} 
+.f{
+font-weight:bold;
+color: #880000;
+}

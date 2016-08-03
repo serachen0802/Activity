@@ -1,0 +1,61 @@
+
+.OrderContent {
+    padding: 0 5%;
+}
+
+.agreeTitle {
+    font-size: 30px;
+    font-weight: 900;
+    /*font-family:PMingLiU;*/
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #000;
+}
+
+.agreeContent {
+    /*font-family:PMingLiU ;*/
+    font-size: 15px;
+    padding: 2% 5%;
+}
+
+.agreeCheck {
+    padding: 2% 5%;
+}
+
+.FormBlock {
+    padding: 2% 5%;
+}
+
+.FormOne {
+    float: left;
+}
+
+.FormOne label {
+    padding-right: 10px;
+}
+
+.FormOne input {
+    margin-right: 20px;
+}
+
+.SubmitBtn {
+    float: right;
+    margin-top: 15px;
+} 
+dt{
+    PADDING-TOP: 5px;
+    PADDING-RIGHT: 20px;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 20px;
+    BORDER-LEFT: #cccccc 1px solid;
+    BORDER-BOTTOM: #cccccc 1px solid;
+    /* FONT-SIZE: 15px; */
+    FONT-WEIGHT: bold;
+    COLOR: #A42D00;
+    BACKGROUND: #DCDCDC;
+}
+dd{
+    display: block;
+    -webkit-margin-start: 40px;
+}

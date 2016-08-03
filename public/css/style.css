@@ -1,0 +1,101 @@
+
+body {
+    font-family: Microsoft JhengHei;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.header {
+    background: url(../images/bgImg_Header.jpg) left top repeat;
+    /*background-color: #FFFFFF;*/
+}　
+
+.footer {
+    height: 200px;
+    background-color: #403f45;
+}
+
+/*選單*/
+.logo {
+  float: left;
+  width: 30%;
+  margin-top: 10px;
+}
+
+.logo img {
+    width: 180px;
+}
+
+.menu {
+    float: right;
+}
+
+.menu ul {
+    margin: 0;
+    list-style-type: none;
+}
+
+.menu ul li {
+    display: inline-block;
+    padding: 40px 10px 0 10px;
+}
+/*字體*/
+.menu ul li a {
+    padding: 40px 0 10px 0;
+    color: #423834;
+    font-size: 14px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.menu ul li a:hover, .menu ul li a.active {
+    border-bottom: 3px solid #423834;
+}
+
+/*選單 End*/
+
+
+/*Content*/
+
+.background-image {
+    /*background: url(../images/bgImg.png) left top repeat;*/
+    background-color: #F5F5F5;
+    height: 100%;
+    box-shadow: 0 3px 10px #EDEDED inset;
+}
+
+.block {
+    margin: 0 auto 50px auto;
+    max-width: 980px;
+    padding: 4% 5%;
+    background: rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px #E0E0E0;
+}
+
+.title {
+    margin: 20px auto;
+    max-width: 980px;
+}
+
+.titleTxt {
+    width: 33%;
+    font-size: 30px;
+    font-weight: 900;
+    color: #4C3124;
+    border-bottom: 5px dashed #7e6b5a;
+}
+
+/*送出按鈕*/
+.SubmitBtn input {
+    background-color: #A66E54;
+    color: #FFFFFF;
+    font-weight: bold;
+    
+}
+
+.SubmitBtn input:hover {
+    background-color: #834E34;
+    color: #FFFFFF;
+}

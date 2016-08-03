@@ -1,0 +1,39 @@
+
+.DataContent {
+    margin: 0 15%;
+}
+
+.ImTitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.ImOne {
+    float: left;
+    font-size: 16px;
+    padding: 8px 30px 0 0 ;
+}
+
+.ImOne select {
+    width: 150px;
+    background-color: #FFFFFF;
+    padding: 1px 10px;
+}
+
+.TotalPrice {
+    margin-top: 20px;
+    border-top: 1px solid #000;
+    padding-left: 35%;
+}
+
+#TotalPrice {
+    font-size: 24px;
+    color: #EE0000;
+}
+
+.SubmitBtn {
+    margin-top: 20px;
+    padding-left: 20%;
+    
+}
