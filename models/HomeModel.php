@@ -29,12 +29,9 @@ class HomeModel extends connect{
         $data = $a->fetchAll(PDO::FETCH_ASSOC);
             return $data;
     }
-    
-//     SELECT *,(SELECT SUM(`total`) FROM `ac_join` WHERE  `ac_join`.`aId`=`ac_activ`.`aId`) AS `totalP`
 
-// FROM `ac_activ`;
     public function signPage($url){
-        $a = $this->db->query("SELECT * FROM `ac_activ` WHERE url='".$url."'");
+        $a = $this->db->query("SELECT *,(SELECT SUM(`total`) FROM `ac_join` WHERE  `ac_join`.`aId`=`ac_activ`.`aId`) AS `totalP` FROM `ac_activ` WHERE url='".$url."'");
         $data = $a->fetch(PDO::FETCH_ASSOC);
             return $data;
     }
@@ -42,6 +39,12 @@ class HomeModel extends connect{
     public function countPeople(){
          
         $a = $this->db->query("SELECT `aId`,(SELECT SUM(`total`) FROM `ac_join` WHERE  `ac_join`.`aId`=`ac_activ`.`aId`) AS `totalP` FROM `ac_activ`");
+        $data = $a->fetchALL(PDO::FETCH_ASSOC);
+            return $data;
+    }
+    
+    public function checkbox($aId){
+        $a = $this->db->query("SELECT * FROM `ac_member`");
         $data = $a->fetchALL(PDO::FETCH_ASSOC);
             return $data;
     }

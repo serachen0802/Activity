@@ -1,11 +1,14 @@
 
+ $(function() {
+     
+
  var interval = setInterval(function(){
      $.ajax({
         url: '../Home/countPeople',
         type: 'POST',
         dataType: 'json',
         error: function(xhr) {
-            alert(xhr.status);
+            // alert(xhr.status);
         },
         success: function(response) {
             var result='';
@@ -27,3 +30,6 @@ $(function() {
      $('.datenowpicker').datetimepicker();
       
 });
+
+
+ })

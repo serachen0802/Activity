@@ -100,12 +100,14 @@
                                 
                             </div>
                             <div class="FormOneBtn">
+                                
                                 <div class="FormBtn">
                                     <input type="submit" value="新增" id="btnok" name="btnok" />
                                 </div>
                                 <div class="FormBtn">
                                     <input type="reset" name="reset" value="清除重填" />
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -159,6 +161,11 @@
                                             <td>
                                             <?php echo '<button type="button" class="btn" onclick="SubmitForm()">刪除</button>';  ?>
                                              </td>
+                                            <td>
+                                            
+                                            
+                                            <button type="button" class="btn" onclick="location.href = '/Activity/Home/checkbox/<?php echo $value['aId'];?>'">限制參加人員</button>
+                                             </td>
 
                                  
                                     </td>
@@ -169,8 +176,9 @@
                             </tbody>
                         </table>
                     </div>
-                <!--</div>-->
         </div>
         </div>
     </form>
 </body>
+
+</html>
