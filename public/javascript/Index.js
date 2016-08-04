@@ -1,44 +1,29 @@
-$(function() {
-    $("#btnok").click(function() {
-    //     if(!("#name").val()){
-    //         alert("請輸入活動名稱");
-    //     }else{
-            // var now = new Date();
-            // var orderdate = new Date($("#orderdate").val());
 
-            // if (orderdate  < now) {
-            //     alert("請輸入正確日期");
-            // }
-            // else if ($("#ordertime1").val() != "" && $("#ordertime2").val() != "") {
-            //     var ordertime1 = new Date(now.toDateString() + " " + $("#ordertime1").val());
-            //     var ordertime2 = new Date(now.toDateString() + " " + $("#ordertime2").val());
-            //     if (ordertime1 > ordertime2) {
-            //         alert("請輸入正確時間範圍");
-            //     }
-            //     else {
-            //         $("form").submit();
-            //     }
-            // }
-            // else {
-                $("form").submit();
-            // }
-        })
-})
+ var interval = setInterval(function(){
+     $.ajax({
+        url: '../Home/countPeople',
+        type: 'POST',
+        dataType: 'json',
+        error: function(xhr) {
+            alert(xhr.status);
+        },
+        success: function(response) {
+            var result='';
+             for(var i=0; i<response.length;i++){
+                 if(response[i]['totalP']==null){
+                     response[i]['totalP'] = 0;
+                    }
+                t=$('tr')[response[i]['aId']];
+                 $(t).find('.total').text(response[i]['totalP']);
+            }
+        }
+    })
+ },1000)
 
 $(function() {
 
     $.datetimepicker.setLocale('zh-TW');
 
-    // $(".datenowpicker").datetimepicker({
-    //     timepicker: false,
-    //     format: 'Y/m/d',
-    //     minDate: 0
-    // });
-
-    $(".timepicker").datetimepicker({
-        datepicker: false,
-        format: 'H:i',
-    });
-    
      $('.datenowpicker').datetimepicker();
+      
 });

@@ -23,7 +23,7 @@
         <div class="header">
             <div class="container">
                 <div class="logo">
-                    <a href="https://lab-sera-chen.c9users.io/Activity/Home/index"><font class="title">報名系統後台</font></a>
+                    <a href="https://lab-sera-chen.c9users.io/Activity/Home/index">報名系統後台</a>
                 </div>
                 <div class="menu">
                     <!--<ul>-->
@@ -56,7 +56,7 @@
                                     <p>活動日期</p>
                                 </div>
                                 <div class="FormRight">
-                                    <input name='date' id="orderdate" type="text" class="datenowpicker" require_onced="require_onced" />
+                                    <input name='date' id="orderdate" type="text" class="datenowpicker" required="required" />
                                 </div>
                             </div>
                                 <div class="FormOne">
@@ -64,7 +64,7 @@
                                     <p>開始報名日期</p>
                                 </div>
                                 <div class="FormRight">
-                                     <input name='startdate' id="orderdate" type="text" class="datenowpicker" require_onced="require_onced" />
+                                     <input name='startdate' id="orderdate" type="text" class="datenowpicker" required="required" />
                                 </div>
                                 </div>
                                 
@@ -73,7 +73,7 @@
                                     <p>結束報名日期</p>
                                 </div>
                                 <div class="FormRight">
-                                     <input name='enddate' id="orderdate" type="text" class="datenowpicker" require_onced="require_onced" />
+                                     <input name='enddate' id="orderdate" type="text" class="datenowpicker" required="required" />
                                 </div>
                                 </div>
                                 
@@ -91,7 +91,7 @@
                                     <p>可否攜伴</p>
                                 </div>
                                 <div class="FormRight">
-                                    <select class="easyui-combobox textbox" name="type" style="width:70px;" >
+                                    <select class="easyui-combobox textbox" name="type" style="width:70px;" required="required" >
                                         <option value="可">可</option>
                                         <option value="否">否</option>
                                     </select> 
@@ -101,7 +101,7 @@
                             </div>
                             <div class="FormOneBtn">
                                 <div class="FormBtn">
-                                    <input type="button" value="新增" id="btnok" name="btnok" />
+                                    <input type="submit" value="新增" id="btnok" name="btnok" />
                                 </div>
                                 <div class="FormBtn">
                                     <input type="reset" name="reset" value="清除重填" />
@@ -111,11 +111,9 @@
                     </div>
                 </div>
                 <!---------------------------------------------最新消息-------------------------------------------------->
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="SearchBox">
+                <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                    <div class="SearchBox2">
                         <h1>所有活動</h1>
-                       <div class="row">
-                <div class="col-md-12">
                     <div class="block">
                         <table class="table">
                             <thead>
@@ -125,6 +123,7 @@
                                     <th>活動日期</th>
                                     <th>開始報名日期</th>
                                     <th>結束報名日期</th>
+                                    <th>已參加人數</th>
                                     <th>可參加人數</th>
                                     <th>可否攜伴</th>
                                     <th>報名網址</th>
@@ -135,35 +134,33 @@
                             <tbody>
                                 
                             <?php 
-                            // $Num = count($data['arr_data'] );
-                            // if ($Num == 0) {
-                            //     echo "<script>alert('查無資料,請重新查詢!');</script>";
-                            //     header("Refresh:0;url=https://lab-sera-chen.c9users.io/cybusEasy/");
-                            // }
-                            // else {
-                            // var_dump($data);
+                                
                                 foreach($data["arr"] as $key => $value)
-                                {
+                                { 
                                 ?>
-                                <tr>
+                                <tr data-id="<?php echo $value['aId'];?>">
                                     <td><?php echo $value['aId'];?></td>
                                     <td><?php echo $value['name'];?></td>
-                                    <td><?php echo $value['date'];?></td>
-                                    <td><?php echo $value['startdate'];?></td>
-                                    <td><?php echo $value['enddate'];?></td>
+                                    <td><?php echo date("Y/m/d H:i", strtotime($value['date']));?></td>
+                                    <td><?php echo date("Y/m/d H:i", strtotime($value['startdate']));?></td>
+                                    <td><?php echo date("Y/m/d H:i", strtotime($value['enddate']));?></td>
+                                    
+                                    <td><div class="total"></div></td>
+                                    
                                     <td><?php echo $value['people'];?></td>
                                     <td><?php echo $value['type'];?></td>
                                     <td><a href="https://lab-sera-chen.c9users.io/Activity/Home/url/<?php echo $value['url'];?>"><?php echo $value['url'];?></a></td>
-                                    <td><?php echo $value['createTime'];?></td>
+                                    <td><?php echo date("Y/m/d H:i", strtotime($value['createTime']));?></td>
                                     <td>
-                                    <?php
-                                    //   $time1 = strtotime ( $value['date'].$value['time'] );
-                                    //   $time2 = strtotime(date('Y-m-d H:i:s',time()+8*60*60));
+                           
+                                    <td>
+                                           <?php echo '<button type="button" class="btn" onclick="SubmitForm()">編輯</button>';?>  
+                                           </td>
+                                            <td>
+                                            <?php echo '<button type="button" class="btn" onclick="SubmitForm()">刪除</button>';  ?>
+                                             </td>
 
-                                    //     if ($time1 > $time2) {
-                                    //         echo '<button type="button" class="btn" onclick="SubmitForm(' . $value['sid'] .',' . $value['did'] .')">訂票</button>';  
-                                    //     }
-                                    ?>
+                                 
                                     </td>
                                 </tr>
                                 <?php }
@@ -172,9 +169,7 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
-        </div>
+                <!--</div>-->
         </div>
         </div>
     </form>
