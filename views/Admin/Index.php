@@ -151,7 +151,6 @@
             </div>
             </div>
                 
-                                
                 <!---------------------------------------------所有活動-------------------------------------------------->
                 <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
                     <div class="SearchBox2">
@@ -201,17 +200,11 @@
                                             <td>
                                             <?php echo '<button type="button" class="btn" onclick="SubmitForm()">刪除</button>';  ?>
                                              </td>
-                                            <td>
-                                            
-                                            
-                                            <button type="button" class="btn" onclick="location.href = '/Activity/Home/checkbox/<?php echo $value['aId'];?>'">限制參加人員</button>
-                                             </td>
 
-                                 
                                     </td>
                                 </tr>
                                 <?php }
-                                //}?>
+                                ?>
 
                             </tbody>
                         </table>

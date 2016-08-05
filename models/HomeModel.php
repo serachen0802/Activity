@@ -71,6 +71,6 @@ class HomeModel extends connect{
        
         return $num;
     }
-            
+    
 }
 ?>

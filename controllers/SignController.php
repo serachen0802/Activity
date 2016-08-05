@@ -14,7 +14,6 @@ class SignController extends Controller {
             $this->view("alert",'已經報名過囉');
             header("refresh:0,/Activity/Home/url/$url");
         }
-        // var_dump(count($a));
        
         $aid = $data['aId'];
         
@@ -33,12 +32,12 @@ class SignController extends Controller {
             $data["act"] = $model-> insert($data);
         }
 
-        //  if ($data == true){
-        //     $this->view("alert",'報名成功');
-        //     header("refresh:0,/Activity/Home/url/$url");
-        //  }else{
-        //     $this->view("alert",'報名失敗');
-        // }
+         if ($data == true){
+            $this->view("alert",'報名成功');
+            header("refresh:0,/Activity/Home/url/$url");
+         }else{
+            $this->view("alert",'報名失敗');
+        }
         
     }
     
