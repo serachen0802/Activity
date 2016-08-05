@@ -19,7 +19,7 @@ class SignModel extends connect{
     } 
     
     public function GetApplyNum($aId){
-        $a = $this->db->query("SELECT SUM(`total`) as 'Num' FROM `ac_join` WHERE `aId` = ".$aId);
+        $a = $this->db->query("SELECT SUM(`total`) AS 'Num' FROM `ac_join` WHERE `aId` = ".$aId);
         $data = $a->fetchALL(PDO::FETCH_ASSOC);
         return $data;
    }

@@ -148,7 +148,7 @@ td, th {
 
 /*查詢按鈕*/
 
-.FormBtn input[type=submit],.FormBtn input[type=reset] {
+.FormBtn input[type=submit],.FormBtn input[type=reset],.FormBtn input[type=button] {
     padding: 7px 15px;
     border: none;
     font-weight: 600;
@@ -188,4 +188,8 @@ td, th {
     padding: 10px 40px 20px 40px;
     background: rgba(228, 232, 246, 0.76);
     width:1160px;
+}
+
+.newMember{
+    padding-bottom: 10px;
 }

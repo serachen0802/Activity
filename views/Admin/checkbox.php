@@ -60,3 +60,6 @@
                 <input type="checkbox" value="4" name="4">4
             </div>
         </form>
+      
+	</body> 
+	</html>  

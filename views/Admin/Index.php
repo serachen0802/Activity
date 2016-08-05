@@ -56,7 +56,7 @@
                                     <p>活動日期</p>
                                 </div>
                                 <div class="FormRight">
-                                    <input name='date' id="orderdate" type="text" class="datenowpicker" required="required" />
+                                    <input name='a_date'  type="text" class="datenowpicker" required="required" />
                                 </div>
                             </div>
                                 <div class="FormOne">
@@ -64,7 +64,7 @@
                                     <p>開始報名日期</p>
                                 </div>
                                 <div class="FormRight">
-                                     <input name='startdate' id="orderdate" type="text" class="datenowpicker" required="required" />
+                                     <input name='startdate'  type="text" class="datenowpicker" required="required" />
                                 </div>
                                 </div>
                                 
@@ -73,7 +73,7 @@
                                     <p>結束報名日期</p>
                                 </div>
                                 <div class="FormRight">
-                                     <input name='enddate' id="orderdate" type="text" class="datenowpicker" required="required" />
+                                     <input name='enddate'  type="text" class="datenowpicker" required="required" />
                                 </div>
                                 </div>
                                 
@@ -102,17 +102,57 @@
                             <div class="FormOneBtn">
                                 
                                 <div class="FormBtn">
-                                    <input type="submit" value="新增" id="btnok" name="btnok" />
+                                    <input type="submit" value="建立活動" id="btnok" name="btnok" />
                                 </div>
                                 <div class="FormBtn">
                                     <input type="reset" name="reset" value="清除重填" />
+                                </div>
+                                <div class="FormBtn">
+                                    <input type="button" id="clickShow" name="cho" onclick="show()" value="選擇可參加人員" />
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
                 </div>
-                <!---------------------------------------------最新消息-------------------------------------------------->
+                <!-------------------------選擇參加人員------------------------>
+            <div id="showId" style="display:none;">
+            <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="SearchBox">
+                        <h1>新增可參加人員</h1>
+                        <div class="SearchForm4" >
+                       
+                            <div id="newMember" class="newMember" style="display: none">
+    	                      <span id="deleteIcon" class="icon-delete"></span>
+    	                      <span>編號:</span>
+    	                      <input type="text" name="num[]">
+    	                      <span>姓名:</span>
+    	                      <input type="text" name="member[]">
+    	                    </div>
+                                
+                            </div>
+                            
+                            <div class="FormOneBtn">
+                                
+                                <div class="FormBtn">
+                                    <input id="btn_add" type="button" value="新增"  />
+                                </div>
+                                <div class="FormBtn">
+                                    <input type="reset" name="reset" value="清除重填" />
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+                
+                                
+                <!---------------------------------------------所有活動-------------------------------------------------->
                 <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
                     <div class="SearchBox2">
                         <h1>所有活動</h1>

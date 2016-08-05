@@ -10,7 +10,7 @@ class HomeModel extends connect{
     
         $tins->execute(array(
                 ':name' =>$data['name'],
-                ':date' =>$data['date'],
+                ':date' =>$data['a_date'],
                 ':startdate'=>$data['startdate'],
                 ':enddate'=>$data['enddate'],
                 ':people'=>$data['people'],
@@ -20,8 +20,9 @@ class HomeModel extends connect{
                 ':createPeople'=>"admin"
                 )
             );
+            $aId = $this->db->lastInsertId();
 
-            return true;
+            return $aId;
     }
     
     public function show(){
@@ -47,6 +48,28 @@ class HomeModel extends connect{
         $a = $this->db->query("SELECT * FROM `ac_member`");
         $data = $a->fetchALL(PDO::FETCH_ASSOC);
             return $data;
+    }
+    
+    public function insertLimitm($data,$aId){
+        $t = $this->db->prepare("INSERT INTO `ac_limitm` " .
+                    "(`aId`,`mId`,`mName`)".
+                    "values(:aId,:mId,:mName)"
+                  );
+        $num = "";
+        $member = "";
+        $t->bindParam(':aId', $aId);
+        $t->bindParam(':mId', $num);
+        $t->bindParam(':mName', $member);
+        
+        for($i = 0; $i < sizeof($data['num']); $i++){
+			$num = $data['num'][$i];
+			$member = $data['member'][$i];
+    		if(strlen($num) > 0 && strlen($member) > 0){
+    				 $t->execute();
+			}
+		}
+       
+        return $num;
     }
             
 }
