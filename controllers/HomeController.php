@@ -37,7 +37,7 @@ class HomeController extends Controller {
             $this->view("alert",'請輸入正確時間');
             header("refresh:0,url=index");
         }else{
-        // // //新增
+        //新增
             $insert =  $this-> model("HomeModel");
             $aId = $insert-> insert($data);
     

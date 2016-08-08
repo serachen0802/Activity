@@ -20,7 +20,6 @@
            
              $('tr[data-id='+c+']').find('.total').text(response[i]['totalP']);
         }
-        
     }
 })
   },1000)

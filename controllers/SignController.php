@@ -14,31 +14,40 @@ class SignController extends Controller {
             $this->view("alert",'已經報名過囉');
             header("refresh:0,/Activity/Home/url/$url");
         }
-       
-        $aid = $data['aId'];
+        $mem = $model-> canAct($data);
+        //判斷帳號是否被允許參加
+        for($x = 0;$x < count($mem);$x++){
+           if($data['mId'] == $mem[$x]['mId']){
+                $aid = $data['aId'];
+                
+                //X如果額滿要報名失敗
+                $b = $model ->totalPeople($data);
+                $p = $model ->GetApplyNum($aid);
+                
+                if($p[0]['Num'] != 0){
+                    $b['people'] -= (int)$p[0]['Num'];
+                }
+                
+                if($b['people'] < $data['total']){
+                    $this -> view("alert",'已額滿');
+                    header("refresh:0,/Activity/Home/url/$url");
+                }else{
+                    $data["act"] = $model-> insert($data);
+                }
         
-        //X如果額滿要報名失敗
-        $b = $model ->totalPeople($data);
-        $p = $model ->GetApplyNum($aid);
-        
-        if($p[0]['Num'] != 0){
-            $b['people'] -= (int)$p[0]['Num'];
-        }
-        
-        if($b['people'] < $data['total']){
-            $this -> view("alert",'已額滿');
-            header("refresh:0,/Activity/Home/url/$url");
-        }else{
-            $data["act"] = $model-> insert($data);
+                 if ($data == true){
+                    $this->view("alert",'報名成功');
+                    header("refresh:0,/Activity/Home/url/$url");
+                 }else{
+                    $this->view("alert",'報名失敗');
+                }
+            return;
+            }else{
+                $this->view("alert",'此編號未被同意報名');
+                header("refresh:0,/Activity/Home/url/$url");
+           }
         }
 
-         if ($data == true){
-            $this->view("alert",'報名成功');
-            header("refresh:0,/Activity/Home/url/$url");
-         }else{
-            $this->view("alert",'報名失敗');
-        }
-        
     }
     
     function GetApplyNum(){

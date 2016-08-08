@@ -35,5 +35,11 @@ class SignModel extends connect{
         $data = $b->fetch(PDO::FETCH_ASSOC);
         return $data;
     } 
+    
+    public function canAct($data){
+        $b = $this->db->query("SELECT `mId` FROM `ac_limitm` WHERE `aId`='".$data['aId']."'");
+        $data = $b->fetchALL(PDO::FETCH_ASSOC);
+        return $data;
+    }
 }
 ?>

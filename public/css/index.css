@@ -196,3 +196,7 @@ td, th {
 .not{
     font-size: 50px;
 }
+
+.btn{
+        background-color: lightpink;
+}
